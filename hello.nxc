@@ -1,0 +1,6 @@
+task main() {
+    TextOut(0, 0, "Hello, world!");
+    Wait(2000);
+}
+
+//" vim: filetype=c

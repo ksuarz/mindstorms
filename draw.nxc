@@ -1,0 +1,41 @@
+/*
+ * draw.nxc - try drawing something
+ */
+
+#define WHEELS OUT_AB
+#define PEN OUT_C
+
+/**
+ * Move the robot forward.
+ */
+void forward() {
+    OnFwd(WHEELS, 100);
+}
+
+/**
+ * Move the robot backwards.
+ */
+void backwards() {
+    OnRev(WHEELS, 100);
+}
+
+/**
+ * Raise the wheel holding the pen.
+ */
+void raise() {
+    OnRev(PEN, 100);
+    Wait(1000);
+}
+
+/**
+ * Lowers the wheel holding the pen.
+ */
+void lower() {
+    OnFwd(PEN, 100);
+    Wait(1000);
+}
+
+task main() {
+}
+
+//" vim: filetype=c
