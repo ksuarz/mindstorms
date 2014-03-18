@@ -1,0 +1,6 @@
+#include "../skeleton.h"
+
+task main() {
+    RotateMotor(WHEELS, 100, 90);
+    Wait(5000);
+}

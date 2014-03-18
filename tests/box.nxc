@@ -1,0 +1,21 @@
+#include "../skeleton.h"
+
+// Approximate number of milliseconds to turn 90 degrees - varies by surface,
+// don't rely on this...
+#define QUARTER_TURN 1460
+
+/**
+ * Move in a box. (Approximately)
+ */
+task main() {
+    forward(2000);
+    turn_left(QUARTER_TURN);
+    forward(2000);
+    turn_left(QUARTER_TURN);
+    forward(2000);
+    turn_left(QUARTER_TURN);
+    forward(2000);
+    turn_left(QUARTER_TURN);
+}
+
+//" vim: filetype=c

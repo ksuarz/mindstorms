@@ -11,6 +11,10 @@
 #define WHEELS OUT_BC
 #define PEN OUT_A
 
+// Approximate number of milliseconds to turn 90 degrees - varies by surface,
+// don't rely on this...
+#define QUARTER_TURN 1460
+
 /**
  * Move the robot forward.
  */
