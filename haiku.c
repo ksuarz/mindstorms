@@ -33,22 +33,39 @@ struct haiku* generate(){
 		"congratulations", 
 		"kaleidoscopic", 
 		"accumulation", 
-		"cannibalism"};
+		"cannibalism",
+		"with winter comes snow",
+		"rockets to the moon",
+		"a doubly linked list",
+		"segmentation fault",
+		"a cs student",
+		"lego mindstorm rules",
+		"pizza lunchables",
+		"volcano princess"};
 	
-	char* seven[10] = { 
+	char* seven[15] = { 
 		"a null pointer exception", 
 		"trees protect and nurture us", 
 		"kittens often dream in space", 
 		"the great big sun warms our earth", 
 		"a great big leaf shades an ant", 
-		"daylight savings save the day"};
+		"daylight savings save the day",
+		"a null pointer exception",
+		"pizza sauce kung fu fighter",
+		"cranberries and strawberries",
+		"grapefruit size of bowling ball",
+		"the winter air makes me blush",
+		"a hot air balloon in flight",
+		"a seagull eating french fries",
+		"swivel chairs rock me to sleep",
+		"memory leaks? Use valgrind"};
 	
 	srand(time(NULL));
 	line1 = rand() % 23;
 	line2 = rand() % 6;
 	line3 = rand() % 23;
 	
-	//printf("%d, %d, %d\n", line1, line2, line3);
+	printf("%d, %d, %d\n", line1, line2, line3);
 	
 	while(line1 == line3){
 		line3 = rand() % 23;
