@@ -48,7 +48,7 @@ struct haiku* generate(){
 		"the blue screen of death",
 		};
 	
-	char* seven[20] = { 
+	char* seven[30] = { 
 		"a null pointer exception", 
 		"trees protect and nurture us", 
 		"kittens often dream in space", 
@@ -65,7 +65,9 @@ struct haiku* generate(){
 		"swivel chairs rock me to sleep",
 		"memory leaks? Use valgrind"
 		"windowless cardboard box homes",
-		"piniatas full of soup"};
+		"piniatas full of soup",
+		"stepping on a lego block",
+		"computer science classes"};
 	
 	srand(time(NULL));
 	line1 = rand() % 23;
