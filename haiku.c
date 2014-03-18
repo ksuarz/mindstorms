@@ -84,6 +84,8 @@ int main(){
 	
 	struct haiku* yay = generate();
 	printf("Here is your haiku! Enjoy :)\n");
+	printf("* * * * * * * * * * * * * * *\n");
+	
 	printf("%s\n%s\n%s\n", yay->line1, yay->line2, yay->line3);
 
 
