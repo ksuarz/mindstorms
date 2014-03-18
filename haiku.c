@@ -46,6 +46,7 @@ struct haiku* generate(){
 		"volcano princess",
 		"temp variable", 
 		"the blue screen of death",
+		"twitch plays pokemon"
 		};
 	
 	char* seven[30] = { 
