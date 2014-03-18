@@ -11,7 +11,7 @@ struct haiku* generate(){
 	int line2;
 	int line3;
 	
-	char* five[35] = {"the rabbit went home", 
+	char* five[40] = {"the rabbit went home", 
 		"sweaters are fuzzy", 
 		"dinosaurs died out", 
 		"hot soup tastes yummy", 
@@ -21,6 +21,8 @@ struct haiku* generate(){
 		"horse ears are quite soft", 
 		"the mountains afar", 
 		"a blanket of snow", 
+		"array out of bounds",
+		"systems programming",
 		"doors open quickly", 
 		"pieces of cake rejected", 
 		"the lenses like eyes", 
@@ -41,9 +43,12 @@ struct haiku* generate(){
 		"a cs student",
 		"lego mindstorm rules",
 		"pizza lunchables",
-		"volcano princess"};
+		"volcano princess",
+		"temp variable", 
+		"the blue screen of death",
+		};
 	
-	char* seven[15] = { 
+	char* seven[20] = { 
 		"a null pointer exception", 
 		"trees protect and nurture us", 
 		"kittens often dream in space", 
@@ -58,14 +63,16 @@ struct haiku* generate(){
 		"a hot air balloon in flight",
 		"a seagull eating french fries",
 		"swivel chairs rock me to sleep",
-		"memory leaks? Use valgrind"};
+		"memory leaks? Use valgrind"
+		"windowless cardboard box homes",
+		"piniatas full of soup"};
 	
 	srand(time(NULL));
 	line1 = rand() % 23;
 	line2 = rand() % 6;
 	line3 = rand() % 23;
 	
-	printf("%d, %d, %d\n", line1, line2, line3);
+	/*printf("%d, %d, %d\n", line1, line2, line3);*/
 	
 	while(line1 == line3){
 		line3 = rand() % 23;
@@ -83,7 +90,7 @@ struct haiku* generate(){
 int main(){
 	
 	struct haiku* yay = generate();
-	printf("Here is your haiku! Enjoy :)\n");
+	
 	printf("%s\n%s\n%s\n", yay->line1, yay->line2, yay->line3);
 
 
