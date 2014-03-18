@@ -11,7 +11,7 @@ struct haiku* generate(){
 	int line2;
 	int line3;
 	
-	char* five[35] = {"the rabbit went home", 
+	char* five[40] = {"the rabbit went home", 
 		"sweaters are fuzzy", 
 		"dinosaurs died out", 
 		"hot soup tastes yummy", 
@@ -21,6 +21,8 @@ struct haiku* generate(){
 		"horse ears are quite soft", 
 		"the mountains afar", 
 		"a blanket of snow", 
+		"array out of bounds",
+		"systems programming",
 		"doors open quickly", 
 		"pieces of cake rejected", 
 		"the lenses like eyes", 
@@ -41,7 +43,10 @@ struct haiku* generate(){
 		"a cs student",
 		"lego mindstorm rules",
 		"pizza lunchables",
-		"volcano princess"};
+		"volcano princess",
+		"temp variable", 
+		"the blue screen of death",
+		};
 	
 	char* seven[20] = { 
 		"a null pointer exception", 
