@@ -65,7 +65,7 @@ struct haiku* generate(){
 	line2 = rand() % 6;
 	line3 = rand() % 23;
 	
-	printf("%d, %d, %d\n", line1, line2, line3);
+	//printf("%d, %d, %d\n", line1, line2, line3);
 	
 	while(line1 == line3){
 		line3 = rand() % 23;
