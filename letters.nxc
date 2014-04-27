@@ -1,0 +1,10 @@
+
+
+void A(){
+	turn_right(5);
+	forward(10);
+	turn_right(15);
+	forward(10);
+
+
+}
