@@ -30,28 +30,28 @@ void B(){
 
 void E(){
 	lower_arm();
-	forward(200);
-	turn_right(10);
-	forward(4);
+	forward(HEIGHT);
+	turn_right(NINETY);
+	forward(90);
 	raise_arm();
-	backward(4);
-	turn_left(10);
-	backward(4);
-	turn_right(10);
+	backward(90);
+	turn_left(NINETY);
+	backward(HEIGHT/2);
+	turn_right(NINETY);
 	lower_arm();
-	forward(4);
+	forward(90);
 	raise_arm();
-	backward(4);
-	turn_left(10);
-	backward(4);
-	turn_right(10);
+	backward(90);
+	turn_left(NINETY);
+	backward(HEIGHT/2);
+	turn_right(NINETY);
 	lower_arm();
-	forward(4);
+	forward(90);
 	
 	//done with E
 	raise_arm();
-	forward(space);
-	turn_left(10);
+	forward(SPACE);
+	turn_left(NINETY);
 	
 }
 
