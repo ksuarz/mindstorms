@@ -2,7 +2,9 @@
 #include "../skeleton.h"
 
 task main(){
-   I();
-   E();
+   A();
+   B();
+   C();
+   
 
 }
