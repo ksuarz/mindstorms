@@ -1,1 +1,8 @@
- 
+#include "../letters.nxc"
+#include "../skeleton.h"
+
+task main(){
+   A();
+   E();
+
+}
