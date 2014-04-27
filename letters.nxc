@@ -1,5 +1,15 @@
 
 
+
+/* 
+   always start at lower left corner, facing up
+   always end at lower right corner, facing down (note for space)
+   lengths:
+   
+   
+   angles:
+*/
+
 void A(){
 	turn_right(5);
 	forward(10);
@@ -7,4 +17,29 @@ void A(){
 	forward(10);
 
 
+}
+
+void B(){
+	
+}
+
+void E(){
+	forward(8);
+	turn_right(10);
+	
+}
+
+void I(){
+
+}
+
+void O(){
+}
+
+void U(){
+}
+
+
+void space(){
+	
 }
