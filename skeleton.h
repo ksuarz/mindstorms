@@ -14,22 +14,22 @@
 /**
  * Move the robot forward.
  */
-void forward(int);
+void forward(int msec);
 
 /**
  * Move the robot backwards.
  */
-void backward(int);
+void backward(int msec);
 
 /**
  * Turns the robot left.
  */
-void turn_left(int);
+void turn_left(int msec);
 
 /**
  * Turns the robot right.
  */
-void turn_right(int);
+void turn_right(int msec);
 
 /**
  * Raise the wheel holding the pen.

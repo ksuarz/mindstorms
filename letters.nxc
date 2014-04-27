@@ -1,5 +1,13 @@
 #include "skeleton.h"
 
+// Function prototypes
+void A();
+void B();
+void E();
+void I();
+void O();
+void U();
+
 //lengths
 #define SPACE 50
 #define HEIGHT 200
