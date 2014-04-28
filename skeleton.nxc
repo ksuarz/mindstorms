@@ -4,7 +4,7 @@
  * Move the robot forward.
  */
 void forward(int msec) {
-    OnFwd(WHEELS, 100);
+    OnFwd(WHEELS, POWER);
     Wait(msec);
     Off(WHEELS);
 }
@@ -13,7 +13,7 @@ void forward(int msec) {
  * Move the robot backwards.
  */
 void backward(int msec) {
-    OnRev(WHEELS, 100);
+    OnRev(WHEELS, POWER);
     Wait(msec);
     Off(WHEELS);
 }
@@ -22,7 +22,7 @@ void backward(int msec) {
  * Turns the robot left.
  */
 void turn_left(int msec) {
-    OnFwd(RIGHT, 100);
+    OnFwd(RIGHT, POWER);
     Wait(msec);
     Off(RIGHT);
 }
@@ -31,7 +31,7 @@ void turn_left(int msec) {
  * Turns the robot right.
  */
 void turn_right(int msec) {
-    OnFwd(LEFT, 100);
+    OnFwd(LEFT, POWER);
     Wait(msec);
     Off(LEFT);
 }
@@ -40,8 +40,8 @@ void turn_right(int msec) {
  * Raise the wheel holding the pen.
  */
 void raise_arm() {
-    OnRev(PEN, 100);
-    Wait(1000);
+    OnRev(PEN, POWER/2);
+    Wait(500);
     Off(PEN);
 }
 
@@ -49,8 +49,16 @@ void raise_arm() {
  * Lowers the wheel holding the pen.
  */
 void lower_arm() {
-    OnFwd(PEN, 100);
-    Wait(1000);
+    OnFwd(PEN, POWER/2);
+    Wait(500);
     Off(PEN);
+}
+
+task main() {
+    while (true) {
+    lower_arm();
+    Wait(1000);
+    raise_arm();
+    }
 }
 //" vim: filetype=c

@@ -1,12 +1,74 @@
-#include "skeleton.h"
-
 //lengths
 #define SPACE 50
-#define HEIGHT 200
+#define HEIGHT 1000
 
 //angles
-#define NINETY 900
-#define ONEEIGHTY 1800
+#define NINETY 2000
+#define ONEEIGHTY 2400
+
+
+// Change these depending on how the robot is wired
+#define LEFT OUT_C
+#define RIGHT OUT_B
+#define WHEELS OUT_BC
+#define PEN OUT_A
+
+#define POWER 50
+
+/**
+ * Move the robot forward.
+ */
+void forward(int msec) {
+    OnFwd(WHEELS, POWER);
+    Wait(msec);
+    Off(WHEELS);
+}
+
+/**
+ * Move the robot backwards.
+ */
+void backward(int msec) {
+    OnRev(WHEELS, POWER);
+    Wait(msec);
+    Off(WHEELS);
+}
+
+/**
+ * Turns the robot left.
+ */
+void turn_left(int msec) {
+    OnFwd(RIGHT, POWER*2);
+    Wait(msec);
+    Off(RIGHT);
+}
+
+/**
+ * Turns the robot right.
+ */
+void turn_right(int msec) {
+    OnFwd(LEFT, POWER*2);
+    Wait(msec);
+    Off(LEFT);
+}
+
+
+/**
+ * Raise the wheel holding the pen.
+ */
+void raise_arm() {
+    OnRev(PEN, POWER/2);
+    Wait(500);
+    Off(PEN);
+}
+
+/**
+ * Lowers the wheel holding the pen.
+ */
+void lower_arm() {
+    OnFwd(PEN, POWER/2);
+    Wait(500);
+    Off(PEN);
+}
 
 /* 
    always start at lower left corner, facing up
@@ -20,15 +82,19 @@
 void A(){
 	lower_arm();
 	forward(HEIGHT);
+        raise_arm();
 	turn_right(NINETY);
+        lower_arm();
 	forward(HEIGHT/2);
+        raise_arm();
 	turn_right(NINETY);
-	forward(HEIGHT);
+        lower_arm();
+	forward(HEIGHT*2);
 	raise_arm();
 	backward(HEIGHT/2);
 	turn_right(NINETY);
 	lower_arm();
-	forward(HEIGHT/2);
+	forward(HEIGHT);
 	raise_arm();
 	backward(HEIGHT/2);
 	turn_left(NINETY);
@@ -53,9 +119,9 @@ void B(){
 	raise_arm();
 	backward(HEIGHT/2);
 	turn_left(NINETY);
-	lower(arm);
+	lower_arm();
 	forward(HEIGHT/2);
-	turn_right(ninety);
+	turn_right(NINETY);
 	forward(HEIGHT/2);
 	raise_arm();
 	turn_right(ONEEIGHTY);
@@ -157,11 +223,11 @@ void G(){
 	lower_arm();
 	forward(HEIGHT);
 	raise_arm();
-	turn_right();
+	turn_right(NINETY); // I made this up - the ninety part
 	lower_arm();
 	forward(HEIGHT/2);
 	backward(HEIGHT/2);
-	turn_right();
+	turn_right(NINETY); // Also made up
 	
 	//I didn't finish this letter.
 
@@ -236,10 +302,10 @@ void U(){
 	forward(HEIGHT/2);
 	turn_left(NINETY);
 	forward(HEIGHT/2);
-	raise(arm);
+	raise_arm();
 	backward(HEIGHT);
 	turn_right(NINETY);
-	foward(SPACE);
+	forward(SPACE);
 	turn_left(NINETY);
 }
 
@@ -252,4 +318,10 @@ void W(){
 void X(){
 }
 void Z(){
+}
+
+task main(){
+   A();
+   B();
+   C();
 }

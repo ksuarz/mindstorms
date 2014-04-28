@@ -7,9 +7,8 @@
 #define WHEELS OUT_BC
 #define PEN OUT_A
 
-// Speed of arm rotation
-#define PENSPEED_X 20
-#define PENSPEED_Y 30
+#define POWER 50
+
 
 /**
  * Move the robot forward.
