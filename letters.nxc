@@ -78,6 +78,28 @@ void lower_arm() {
    
    angles:
 */
+void one(){
+    lower_arm();
+    forward(HEIGHT);
+    raise_arm();
+    backward(HEIGHT);
+    turn_right(NINETY);
+    forward(SPACE);
+    turn_left(NINETY);
+}
+
+void zero(){
+
+    lower_arm();
+    forward(HEIGHT);
+    turn_right(NINETY*4);
+    raise_arm();
+    backward(HEIGHT);
+    turn_right(NINETY);
+    forward(SPACE);
+    turn_left(NINETY);
+    
+}
 
 void A(){
 	lower_arm();
