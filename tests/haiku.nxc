@@ -1,0 +1,55 @@
+#include "letters.nxc"
+
+
+void draw(int number){
+	
+	if(number == 1)
+		one();
+
+	else
+		zero();
+
+}
+
+void genFive(){
+	int count = 0;
+	while (count<5){	
+		int random = Random(2);
+		if (count == 4){
+		random=1;
+		}
+		if (random == 1){
+			count++;
+		}else{
+			count = count+2;
+		}
+		draw(random);
+	}
+
+}
+
+void genSeven(){
+	int count = 0;
+	while (count<7){	
+		int random = Random(2);
+		if (count == 6){
+		random=1;
+		}
+		if (random == 1){
+			count++;
+		}else{
+			count = count+2;
+		}
+		draw(random);
+	}
+}
+
+
+task main(){
+	
+	genFive();
+	genSeven();
+	genFive();
+
+
+}
