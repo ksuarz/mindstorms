@@ -42,6 +42,12 @@ void turn_left(int msec) {
     Off(RIGHT);
 }
 
+void reverse_turn_left(int msec) {
+    OnRev(LEFT, POWER*2);
+    Wait(msec);
+    Off(LEFT);
+}
+
 /**
  * Turns the robot right.
  */
@@ -57,7 +63,7 @@ void turn_right(int msec) {
  */
 void raise_arm() {
     OnRev(PEN, POWER/2);
-    Wait(500);
+    Wait(440);
     Off(PEN);
 }
 
@@ -66,7 +72,7 @@ void raise_arm() {
  */
 void lower_arm() {
     OnFwd(PEN, POWER/2);
-    Wait(500);
+    Wait(290);
     Off(PEN);
 }
 
@@ -78,27 +84,54 @@ void lower_arm() {
    
    angles:
 */
+
+void recalibrate() {
+    lower_arm();
+    Wait(300);
+    raise_arm();
+    Wait(300);
+    lower_arm();
+    Wait(300);
+    raise_arm();
+    Wait(300);
+    lower_arm();
+    Wait(300);
+    raise_arm();
+    Wait(300);
+}
+
 void one(){
     lower_arm();
-    forward(HEIGHT);
+    forward(HEIGHT*2);
     raise_arm();
-    backward(HEIGHT);
+    
+    backward(HEIGHT*2);
     turn_right(NINETY);
-    forward(SPACE);
     turn_left(NINETY);
+    backward(HEIGHT*2);
+    reverse_turn_left(600);
+    backward(HEIGHT);
+//     backward(HEIGHT);
+//     turn_right(NINETY);
+//     forward(SPACE);
+//     turn_left(NINETY);
+    recalibrate();
 }
 
 void zero(){
 
     lower_arm();
-    forward(HEIGHT);
     turn_right(NINETY*4);
     raise_arm();
-    backward(HEIGHT);
-    turn_right(NINETY);
-    forward(SPACE);
+
+    forward(HEIGHT*2);
     turn_left(NINETY);
-    
+    backward(HEIGHT*4);
+//     backward(HEIGHT);
+//     turn_right(NINETY);
+//     forward(SPACE);
+//     turn_left(NINETY);
+    recalibrate();
 }
 
 void A(){
@@ -340,10 +373,4 @@ void W(){
 void X(){
 }
 void Z(){
-}
-
-task main(){
-   A();
-   B();
-   C();
 }
