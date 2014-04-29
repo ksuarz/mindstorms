@@ -48,6 +48,7 @@ def weighted_random(dict, weights):
     Selects a random value from a dictionary based on weights.
     """
     r = random.uniform(0, 1.0)
+    limit = 0.0
     for s, weight in weights.iteritems():
         if limit + weight > r:
             return random.choice(dict[s]), s
@@ -94,5 +95,5 @@ if __name__ == "__main__":
             print get_haiku(words, weights)
             raw_input("\nHit enter for another haiku.\n")
         except KeyboardInterrupt:
-            print "Goodbye!"
+            print "\nGoodbye!"
             break
