@@ -29,11 +29,30 @@
       <p class="caption">
         Lego parts for building robots!
       <p>
+
+      <img src="include/circle1.jpg" width="210px" height="220px" />
+      <p class="caption">
+        HaikuBot's first attempt at a circle.
+      </p>
+
+      <img src="include/pen.jpg" width="250px" height="190px" />
+      <p class="caption">
+        A close up of the marker-holding arm.
+      </p>
+
+      <img src="include/newspaper.jpg" width="203px" height="300px" />
+      <p class="caption">
+        A test of writing "HELLO" on newspaper.
+      </p>
     </div>
     <div id="right">
       <p>
       <strong>Haiku Bot</strong> is a
       <a href="http://mindstorms.lego.com">Lego Mindstorm</a> robot that writes!
+      This is a project for Rutgers' <a
+      href="http://www.cs.rutgers.edu/undergraduate/courses/195/">Honors
+      Computer Science Seminar</a> with Professor <a
+      href="http://www.cs.rutgers.edu/~mdstone/">Matthew Stone</a>.
       </p>
 
       <h1><a name="concept">Concept</a></h1>
@@ -42,6 +61,20 @@
       that can compose and write haiku poems. For those that don't know, a <a
       href="http://en.wikipedia.com/wiki/haiku">haiku</a> is a Japanese
       three-line poem consisting of five, seven and five syllables each.
+      </p>
+
+      <p>
+      Haiku Bot's configuration is simple:
+      <ul>
+        <li> Two track treads for movement; </li>
+        <li> One output motor for each tread; </li>
+        <li> A Lego arm for holding a pen or marker; </li>
+        <li> An output motor for raising/lowering the pen; and </li>
+        <li> A body for holding the brick. </li>
+      </ul>
+      The robot is a simple robot, so it uses no sensory input. Thus, much of
+      the turning and pen-writing is fragile and requires some calibration
+      before use.
       </p>
 
       <p>
@@ -54,10 +87,14 @@
       moving in patterns that mimic letters and numbers. Because of motor
       limitations and its wide turning radius, the characters it produces are
       very large; as a result, it requires at least a square meter of writing
-      space just to produce a few numbers.
+      space just to produce a few numbers. Currently, Haiku Bot writes binary
+      haiku poetry: combinations of zeros and ones.
       </p>
 
       <h1><a name="code">Code</a></h1>
+      <p>
+      All of our code is open-sourced <a
+        href="https://github.com/ksuarz/mindstorms">on GitHub</a>.
       <p>
       Our code uses <a href="http://en.wikipedia.org/wiki/Not_eXactly C">Not
       eXactly C (NXC)</a>, a C-like high-level programming language for
@@ -70,6 +107,29 @@
       We created a few convenience functions for moving the Mindstorm around;
       they wrap some of the NXC API calls in an easier-to-use interface.
       <script src="https://gist.github.com/ksuarz/193573e48d32947dba13.js"></script>
+      </p>
+
+      <p>
+      The zero-one "haiku" code is simple: it uses some random-number generation
+      to randomly select either a zero or one as its next number to draw,
+      depending on the syllable count of the line. Each letter begins with some
+      code to raise the pen; for the zero, it simply rotates 360 degrees; for
+      the one, it attempts to move in a straight line. After drawing, Haiku Bot
+      tries to recalibrate its position to move to the right of the previous
+      letter.
+      </p>
+
+      <p>
+      What about haiku poetry for humans? We've experimented with that too, but
+      Haiku Bot isn't powerful enough to write them out yet. Our first draft of
+      a haiku generator is a <a href="https://github.com/ksuarz/mindstorms/blob/master/haiku/haiku.c">tiny C program</a>:
+      given a pre-composed list of five- and seven-syllable lines, it randomly
+      chooses three lines to make an appropriate poem. Still, those lines were
+      written by a human. For a more random haiku generation, we have a
+      <a href="https://github.com/ksuarz/mindstorms/blob/master/haiku/poet.py">Python script</a>
+      that takes as input a file consisting of words and their syllable content.
+      It makes truly random choices as to which words to string together.
+      <script src="https://gist.github.com/ksuarz/1e8fb6dc2480ca8a9e89.js"></script>
       </p>
 
       <h1><a name="challenges">Challenges</a></h1>
