@@ -20,27 +20,56 @@
     </div>
     <br />
     <div class="selfie" id=left>
-      <img src="include/robot.jpg" width="203px" height="300px" />
+      <img src="include/haikubot.jpg" width="203px" height="300px" />
+      <p class="caption">
+        HaikuBot hooked up to the iLab machines.
+      </p>
+
+      <img src="include/parts.jpg" width="250px" height="200px" />
+      <p class="caption">
+        Lego parts for building robots!
+      <p>
     </div>
     <div id="right">
       <p>
-        <strong>Haiku Bot</strong> is a Lego Mindstorm robot that writes!
+      <strong>Haiku Bot</strong> is a
+      <a href="http://mindstorms.lego.com">Lego Mindstorm</a> robot that writes!
       </p>
 
       <h1><a name="concept">Concept</a></h1>
+      <p>
       The idea is simple: create a robot, based off of the Lego Mindstorm brick,
-      that can compose and write haikus. For those that don't know, a <a
+      that can compose and write haiku poems. For those that don't know, a <a
       href="http://en.wikipedia.com/wiki/haiku">haiku</a> is a Japanese
       three-line poem consisting of five, seven and five syllables each.
+      </p>
 
-      The long-term goal was to create a robot skilled enough with a pen to
-      write entire sentences. <!-- TODO -->
       <p>
+      The long-term goal was to create a robot skilled enough with a pen to
+      write entire sentences. We had hoped to have precision control over the
+      pen; this would allow us to write small, manageable letters that would
+      allow us to compose entire poems in a reasonable amount of space. At the
+      moment, Haiku Bot's motor skills are rather unwieldy and uncoordinated. It
+      manages to write by simply dragging the pen or marker along with it,
+      moving in patterns that mimic letters and numbers. Because of motor
+      limitations and its wide turning radius, the characters it produces are
+      very large; as a result, it requires at least a square meter of writing
+      space just to produce a few numbers.
       </p>
 
       <h1><a name="code">Code</a></h1>
       <p>
-      Our code uses
+      Our code uses <a href="http://en.wikipedia.org/wiki/Not_eXactly C">Not
+      eXactly C (NXC)</a>, a C-like high-level programming language for
+      programming the Mindstorm brick. Due to its limitations, as well as the
+      limited capabilities of the brick itself, we were somewhat restricted in
+      how much Haiku Bot could accomplish.
+      </p>
+
+      <p>
+      We created a few convenience functions for moving the Mindstorm around;
+      they wrap some of the NXC API calls in an easier-to-use interface.
+      <script src="https://gist.github.com/ksuarz/193573e48d32947dba13.js"></script>
       </p>
 
       <h1><a name="challenges">Challenges</a></h1>
