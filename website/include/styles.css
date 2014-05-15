@@ -65,8 +65,9 @@ a.visited {
 
 .navbar {
   background-color:#2eafcf;
-  color:#efefff;
-  font-size:24px;
+  color:#cfcfdf;
+  font-size:16px;
+  font-style:italic;
   overflow:hidden;
   padding-bottom:10px;
   padding-left:20px;
@@ -91,9 +92,6 @@ a.visited {
 	margin: 0 auto;
 }
 
-
-
-
 @media only screen and (max-width: 580px) {
 	#left {
 		width: 100%;
@@ -114,3 +112,4 @@ a.visited {
 	.navbar {
   		font-size:20px;
 	}
+}
